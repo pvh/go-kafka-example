@@ -1,5 +1,28 @@
 {
 	"ImportPath": "go-heroku-example",
 	"GoVersion": "go1.4.2",
-	"Deps": []
+	"Packages": [
+		"./..."
+	],
+	"Deps": [
+		{
+			"ImportPath": "github.com/Shopify/sarama",
+			"Comment": "v1.4.2-2-gb86f862",
+			"Rev": "b86f86267368b80ae9aa3ae54306422c029e407d"
+		},
+		{
+			"ImportPath": "github.com/eapache/go-resiliency/breaker",
+			"Comment": "v1.0.0-1-ged0319b",
+			"Rev": "ed0319b32e66e3295db52695ba3ee493e823fbfe"
+		},
+		{
+			"ImportPath": "github.com/eapache/queue",
+			"Comment": "v1.0.1-2-gd1df561",
+			"Rev": "d1df561eb6b9ffdac8dd98f943e9e9096c76c059"
+		},
+		{
+			"ImportPath": "github.com/golang/snappy/snappy",
+			"Rev": "a911026e1ffa84898778ccb0363930485e0aa880"
+		}
+	]
 }
