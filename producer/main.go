@@ -1,16 +1,19 @@
 package main
 
 import (
-	"fmt"
-	"github.com/kr/go-heroku-example/message"
-	"github.com/Shopify/samara"
-	"time"
+	. "github.com/Shopify/sarama"
+
+  "fmt"
+  "log"
+  "os"
+  "os/signal"
+  "sync"
 )
 
 func main() {
   config := NewConfig()
   config.Producer.Return.Successes = true
-  producer, err := NewAsyncProducer([]string{"localhost:9092"}, config)
+  producer, err := NewAsyncProducer([]string{os.Getenv("KAFKA_HOST")}, config)
   if err != nil {
       panic(err)
   }
@@ -42,8 +45,6 @@ func main() {
   }()
 
 	for {
-		fmt.Println(message.Hello)
-
     ProducerLoop:
     for {
         message := &ProducerMessage{Topic: "demoday", Value: StringEncoder("testing 123")}
