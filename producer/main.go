@@ -3,7 +3,6 @@ package main
 import (
 	. "github.com/Shopify/sarama"
 
-  "fmt"
   "log"
   "os"
   "os/signal"
