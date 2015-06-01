@@ -1,2 +1,3 @@
 web: go-heroku-example
-worker: worker
+producer: producer
+consumer: consumer
